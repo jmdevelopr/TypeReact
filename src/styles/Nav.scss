@@ -1,0 +1,15 @@
+.Nav {
+    grid-auto-rows: 40px;
+    padding-top: 30px;
+    img {
+        grid-column: 2/3;
+    }
+    button {
+        grid-column: 11/12;
+        font-family: 'Roboto', sans-serif;
+        color: var(--primary);
+        font-size: 2.4em;
+        background: none;
+        border: none;
+    }
+}

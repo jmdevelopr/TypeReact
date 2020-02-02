@@ -1,0 +1,17 @@
+.Nav {
+  grid-auto-rows: 40px;
+  padding-top: 30px; }
+  .Nav img {
+    -ms-grid-column: 2;
+    -ms-grid-column-span: 1;
+    grid-column: 2/3; }
+  .Nav button {
+    -ms-grid-column: 11;
+    -ms-grid-column-span: 1;
+    grid-column: 11/12;
+    font-family: 'Roboto', sans-serif;
+    color: var(--primary);
+    font-size: 2.4em;
+    background: none;
+    border: none; }
+/*# sourceMappingURL=Nav.css.map */

@@ -1,0 +1,29 @@
+.Home {
+    height: 82vh;
+    grid-template-rows: repeat(4, 1fr);
+    color: var(--primary);
+    p {
+        font-family: 'Ruluko', sans-serif;
+        margin: 20px 0;
+    }
+    .header {
+        grid-column: 3/11;
+        align-self: center;
+        text-align: center;
+        h1 {
+            font-family: 'Sarabun', sans-serif;
+            font-size: 1.2em;
+            letter-spacing: .04em;
+        }
+    }
+    .start {
+        grid-column: 3/11;
+        grid-row: 2/4;
+        align-self: center;
+        text-align: center;
+        img {
+            height: 90px;
+        }
+    }
+
+}

@@ -31,3 +31,32 @@ html, * {
   display: grid;
   grid-template-columns: repeat(12, 1fr);
 }
+
+section {
+  height: 82vh;
+  grid-template-rows: repeat(4, 1fr);
+  color: var(--primary);
+}
+
+section p {
+    font-family: 'Ruluko', sans-serif;
+    margin: 20px 0;
+}
+
+section header {
+    grid-column: 3/11;
+    align-self: center;
+    text-align: center;
+}
+
+section h1 {
+    font-family: 'Sarabun', sans-serif;
+    font-size: 1.2em;
+    letter-spacing: .04em;
+}
+
+section main {
+    grid-row: 2/4;
+    align-self: center;
+    text-align: center;
+}

@@ -1,34 +1,5 @@
-.Home {
-  height: 82vh;
-  -ms-grid-rows: (1fr)[4];
-      grid-template-rows: repeat(4, 1fr);
-  color: var(--primary); }
-  .Home p {
-    font-family: 'Ruluko', sans-serif;
-    margin: 20px 0; }
-  .Home .header {
-    -ms-grid-column: 3;
-    -ms-grid-column-span: 8;
-    grid-column: 3/11;
-    -ms-flex-item-align: center;
-        -ms-grid-row-align: center;
-        align-self: center;
-    text-align: center; }
-    .Home .header h1 {
-      font-family: 'Sarabun', sans-serif;
-      font-size: 1.2em;
-      letter-spacing: .04em; }
-  .Home .start {
-    -ms-grid-column: 3;
-    -ms-grid-column-span: 8;
-    grid-column: 3/11;
-    -ms-grid-row: 2;
-    -ms-grid-row-span: 2;
-    grid-row: 2/4;
-    -ms-flex-item-align: center;
-        -ms-grid-row-align: center;
-        align-self: center;
-    text-align: center; }
-    .Home .start img {
-      height: 90px; }
+.Home .start {
+  -ms-grid-column: 3;
+  -ms-grid-column-span: 8;
+  grid-column: 3/11; }
 /*# sourceMappingURL=Home.css.map */

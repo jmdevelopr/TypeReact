@@ -1,0 +1,49 @@
+ .Leaderboard main{
+    grid-row: 2/5;
+    grid-column: 3/11;
+    height: 100%;
+    .buttons {
+        width: 80%;
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-between;
+        button {
+            background: var(--secondary);
+            color: var(--primary);
+            border: none;
+            padding: 5px 16px;
+            border-radius: 2em;
+            font-family: 'Nunito', sans-serif;
+            font-size: .8em;
+            text-transform: uppercase;
+        }
+    }
+    .test {
+        width:320px; 
+        height:50vh; 
+        overflow:auto;
+        margin: 30px 0;
+        background: #364F6B;
+        border-radius: 1em;
+        padding: 13px;
+        table {
+            font-family: 'Sarabun', sans-serif;
+            width: 100%;
+            tr {
+                height: 50px;
+                text-align: left;
+            }
+        }
+    }
+    .test::-webkit-scrollbar {
+        width: 7px;
+    }
+    .test::-webkit-scrollbar-track {
+        border-radius: 10px;
+    }
+    .test::-webkit-scrollbar-thumb {
+        background: rgba(0, 0, 0, .4);
+        border-radius: 2em;
+        outline: 1px solid slategrey;
+    }
+}

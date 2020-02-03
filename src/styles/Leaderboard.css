@@ -1,0 +1,49 @@
+.Leaderboard main {
+  -ms-grid-row: 2;
+  -ms-grid-row-span: 3;
+  grid-row: 2/5;
+  -ms-grid-column: 3;
+  -ms-grid-column-span: 8;
+  grid-column: 3/11;
+  height: 100%; }
+  .Leaderboard main .buttons {
+    width: 80%;
+    margin: 0 auto;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between; }
+    .Leaderboard main .buttons button {
+      background: var(--secondary);
+      color: var(--primary);
+      border: none;
+      padding: 5px 16px;
+      border-radius: 2em;
+      font-family: 'Nunito', sans-serif;
+      font-size: .8em;
+      text-transform: uppercase; }
+  .Leaderboard main .test {
+    width: 320px;
+    height: 50vh;
+    overflow: auto;
+    margin: 30px 0;
+    background: #364F6B;
+    border-radius: 1em;
+    padding: 13px; }
+    .Leaderboard main .test table {
+      font-family: 'Sarabun', sans-serif;
+      width: 100%; }
+      .Leaderboard main .test table tr {
+        height: 50px;
+        text-align: left; }
+  .Leaderboard main .test::-webkit-scrollbar {
+    width: 7px; }
+  .Leaderboard main .test::-webkit-scrollbar-track {
+    border-radius: 10px; }
+  .Leaderboard main .test::-webkit-scrollbar-thumb {
+    background: rgba(0, 0, 0, 0.4);
+    border-radius: 2em;
+    outline: 1px solid slategrey; }
+/*# sourceMappingURL=Leaderboard.css.map */

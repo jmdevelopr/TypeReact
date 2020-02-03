@@ -3,6 +3,9 @@ import './App.css';
 import './styles/Nav.css';
 import './styles/Home.css';
 import './styles/Menu.css';
+import './styles/Settings.css';
+import './styles/Leaderboard.css';
+import './styles/About.css';
 
 import Nav from './js/Nav.js';
 import Home from './js/Home.js';
@@ -15,10 +18,10 @@ function App() {
   return (
     <div className="App">
       <Nav />
-      <Home />
-      <Settings />
+      {/* <Home /> */}
+      {/* <Settings /> */}
       <Leaderboard />
-      <About />
+      {/* <About /> */}
       <Menu />
     </div>
   );

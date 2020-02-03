@@ -1,0 +1,21 @@
+.Settings main {
+    grid-column: 2/12;
+        ul li {
+        display: flex;
+        justify-content: space-between;
+        .setup {
+            display: flex;
+            align-items: center;
+            .bar {
+                position: relative;
+                width: 35px;
+                height: 10px;
+                border-radius: 1em;
+                background: var(--symbol);
+            }
+            .bar:nth-child(even) {
+                margin: 0 10px;
+            }
+        }
+    }
+}

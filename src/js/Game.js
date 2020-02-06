@@ -12,6 +12,7 @@ const makeid = length => {
 
 const keyCodeDetect = e => {
     let x = String.fromCharCode(e.which);
+    console.log(x)
     return x;
 }
 
@@ -19,13 +20,13 @@ const gameStart = e => {
 
     let letter = makeid(1);
     let box = document.querySelector('.box');
+    box.textContent = "";
 
-    //set a random time
-    //count down
-    //if (time === 0) {
+    setTimeout(()=>{
         box.textContent = letter;
         timeStart();
-    //}
+    }, 2000)
+        
     return letter;
 }
 

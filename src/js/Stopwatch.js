@@ -11,7 +11,11 @@ const timeStart = () => {
 }
 
 const timeStop = () => {
-  clearInterval(timer)
+  clearInterval(timer);
+  let stopwatch = document.querySelector('.stopwatch');
+  stopwatch.textContent = "0.00 s";
+  ms = 0;
+  s = 0;
 }
 
 const run = () => {

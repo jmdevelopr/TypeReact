@@ -5,41 +5,45 @@ import {gameStart, keyCodeDetect} from './Game';
 
 class Home extends Component {
     letter = "";
+    isGameStarted = false;
 
     gameSwitch = () => {
-        let homeScreen = document.querySelector('.start');
-        let gameScreen = document.querySelector('.game');
+        if (this.isGameStarted === false) {
+            let homeScreen = document.querySelector('.start');
+            homeScreen.style.opacity = '0';
 
-        homeScreen.style.opacity = '0';
-        //homeScreen.style.pointerEvents = 'none';
-        gameScreen.style.opacity = '1';
-        //gameScreen.style.pointerEvents = 'all';
+            let gameScreen = document.querySelector('.game');
+            gameScreen.style.opacity = '1';
 
-        this.letter = gameStart();
+            this.letter = gameStart();
+
+            this.isGameStarted = true;
+        }
     }
 
     handleKeyPress = e => {
         let letterType = keyCodeDetect(e);
         if (this.letter === letterType) {
             timeStop();
+            this.letter = gameStart();
         }
     }
 
     render() {
         return (
-            <section className="Home grid" onClick={this.gameSwitch}>
+            <section className="Home grid" >
                 <header className="header">
                     <h1>Welcome to TypeReact!</h1>
                     <p>Test your typing reactions</p>
                 </header>
+                <input type="text" onKeyPress={this.handleKeyPress} onClick={this.gameSwitch}/>
                 <main className="start">
                     <img src={Start} alt=""/>
                     <p>To start tap on your screen</p>
-                    <input type="text" size="40" onKeyPress={this.handleKeyPress} />
                 </main>
                 <div className="game" onClick={timeStart} >
                     <p>Average: 0.89 s</p>
-                    <div className="box">R</div>
+                    <div className="box"></div>
                     <Stopwatch />
                 </div>
             </section> 

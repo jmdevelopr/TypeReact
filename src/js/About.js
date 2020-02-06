@@ -19,10 +19,10 @@ class About extends Component {
                     <div className="social">
                         <h1>My social media</h1>
                         <div className="icons">
-                            <a href="#"><FontAwesomeIcon icon={faFacebookF}/></a>
-                            <a href="#"><FontAwesomeIcon icon={faLinkedinIn}/></a>
-                            <a href="#"><FontAwesomeIcon icon={faInstagram}/></a>
-                            <a href="#"><FontAwesomeIcon icon={faGithub}/></a>
+                            <a href="facebook.com" target="_blank"><FontAwesomeIcon icon={faFacebookF}/></a>
+                            <a href="facebook.com" target="_blank"><FontAwesomeIcon icon={faLinkedinIn}/></a>
+                            <a href="facebook.com" target="_blank"><FontAwesomeIcon icon={faInstagram}/></a>
+                            <a href="facebook.com" target="_blank"><FontAwesomeIcon icon={faGithub}/></a>
                         </div>
                     </div>
                     <div className="project">

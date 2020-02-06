@@ -1,5 +1,49 @@
-.Home .start {
+.Home {
+  position: relative; }
+  .Home .start {
+    -ms-grid-column: 3;
+    -ms-grid-column-span: 8;
+    grid-column: 3/11; }
+    .Home .start input {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: none;
+      border: none;
+      outline: none;
+      cursor: default;
+      color: transparent; }
+
+.Home .game {
   -ms-grid-column: 3;
   -ms-grid-column-span: 8;
-  grid-column: 3/11; }
+  grid-column: 3/11;
+  -ms-grid-row: 2;
+  -ms-grid-row-span: 2;
+  grid-row: 2/4;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  -ms-grid-column-align: center;
+      justify-self: center;
+  text-align: center;
+  opacity: 0;
+  pointer-events: none; }
+  .Home .game .box {
+    width: 200px;
+    height: 200px;
+    background: #364F6B;
+    border-radius: .2em;
+    font-size: 5em;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    justify-items: center;
+    margin: 25px 0;
+    text-transform: uppercase; }
+
+.stopwatch {
+  color: var(--primary); }
 /*# sourceMappingURL=Home.css.map */

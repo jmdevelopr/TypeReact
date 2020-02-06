@@ -1,4 +1,6 @@
 import React from 'react';
+import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
+
 import './App.css';
 import './styles/Nav.css';
 import './styles/Home.css';
@@ -16,14 +18,26 @@ import Menu from './js/Menu.js';
 
 function App() {
   return (
-    <div className="App">
-      <Nav />
-      {/* <Home /> */}
-      {/* <Settings /> */}
-      <Leaderboard />
-      {/* <About /> */}
-      <Menu />
-    </div>
+    <Router>
+      <div className="App">
+        <Nav />
+        <Switch >
+          <Route exact path="/">
+            <Home />
+          </Route>
+          <Route path="/settings">
+            <Settings />
+          </Route>
+          <Route path="/leaderboard">
+            <Leaderboard />
+          </Route>
+          <Route path="/about">
+            <About />
+          </Route>
+        </Switch>
+        <Menu />
+      </div>
+    </Router>
   );
 }
 

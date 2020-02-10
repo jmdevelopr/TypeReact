@@ -17,6 +17,7 @@
       .Menu ul .option li {
         list-style-type: none;
         font-family: 'Nunito', sans-serif;
+        font-weight: 700;
         text-align: center; }
         .Menu ul .option li .icon {
           font-size: 1.8em; }

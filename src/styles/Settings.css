@@ -2,26 +2,44 @@
   -ms-grid-column: 2;
   -ms-grid-column-span: 10;
   grid-column: 2/12; }
-  .Settings main ul li {
+  .Settings main ul {
+    height: 40vh;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    -webkit-box-pack: justify;
-        -ms-flex-pack: justify;
-            justify-content: space-between; }
-    .Settings main ul li .setup {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -ms-flex-pack: distribute;
+        justify-content: space-around; }
+    .Settings main ul li {
       display: -webkit-box;
       display: -ms-flexbox;
       display: flex;
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+          -ms-flex-direction: column;
+              flex-direction: column;
       -webkit-box-align: center;
           -ms-flex-align: center;
               align-items: center; }
-      .Settings main ul li .setup .bar {
-        position: relative;
-        width: 35px;
-        height: 10px;
-        border-radius: 1em;
-        background: var(--symbol); }
-      .Settings main ul li .setup .bar:nth-child(even) {
-        margin: 0 10px; }
+      .Settings main ul li .setup {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-align: center;
+            -ms-flex-align: center;
+                align-items: center; }
+        .Settings main ul li .setup .bar {
+          position: relative;
+          width: 35px;
+          height: 10px;
+          border-radius: 1em;
+          background: var(--symbol); }
+        .Settings main ul li .setup .bar:nth-child(even) {
+          margin: 0 10px; }
+        .Settings main ul li .setup .fas {
+          cursor: pointer;
+          font-size: 1.4em; }
 /*# sourceMappingURL=Settings.css.map */

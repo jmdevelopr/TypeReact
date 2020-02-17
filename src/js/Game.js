@@ -15,9 +15,10 @@ class Game extends Component {
     //catch the last result at the end manually and add it to the final array
     lastResult = 0;
 
+    //copied from StackOverflow
     makeid = length => {
         let result = '';
-        let characters = 'abcdefghijklmnopqrstuvwxyz0123456789';
+        let characters = 'abcdefghijklmnopqrstuvwxyz';
         let charactersLength = characters.length;
 
         for ( let i = 0; i < length; i++ ) {
@@ -44,16 +45,19 @@ class Game extends Component {
         }
     }
 
-    gameStart = e => {
+    gameStart = () => {
         let letter = this.makeid(1);
 
         let box = document.querySelector('.box');
         box.textContent = "";
+
+        let header = document.querySelector('.header');
+        header.style.opacity = 0;
     
         setTimeout(()=>{
             box.textContent = letter;
             this.timeStart();
-        }, 500)
+        }, this.props.speed)
         //500 for testing purposes, will be changed to a random value
             
         return letter;
@@ -65,12 +69,14 @@ class Game extends Component {
     }
 
     handleKeyPress = e => {
-        let letterType = this.keyCodeDetect(e);
+        //let letterType = this.keyCodeDetect(e);
+
+        let letterType = e.target.value.split('').slice(-1)[0].toLowerCase();
 
         if (this.letter === letterType) {
             this.timeStop();
 
-            if (this.props.results.length !== 4) {
+            if (this.props.results.length !== (this.props.letters - 1)) {
                 this.letter = this.gameStart(); 
             } 
             else {
@@ -147,7 +153,7 @@ class Game extends Component {
 
         return (
             <div className="game">
-                <input type="text" className="input" onKeyPress={this.handleKeyPress} onClick={this.switchToGame}/>
+                <input type="text" className="input" onChange={this.handleKeyPress} onClick={this.switchToGame}/>
                 <p className="average">Average: 0.00 s</p>
                 <div className="box"></div>
                 <div className="stopwatch">0.00 s</div>
@@ -160,7 +166,9 @@ const mapStateToProps = state => {
     return {
         isGameStarted: state.gameReducer.isGameStarted,
         results: state.gameReducer.results,
-        average: state.gameReducer.average
+        average: state.gameReducer.average,
+        letters: state.settingsReducer.numOfLetters,
+        speed: state.settingsReducer.speed
     }
 }
 

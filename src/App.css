@@ -33,7 +33,7 @@ html, * {
 }
 
 section {
-  height: 82vh;
+  height: 82%;
   grid-template-rows: repeat(4, 1fr);
   color: var(--primary);
 }

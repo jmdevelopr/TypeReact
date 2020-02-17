@@ -1,18 +1,29 @@
 import React, {Component} from 'react';
 import { connect } from 'react-redux';
 import { resetResults } from '../store/actions/gameActions';
+import { addScore } from '../store/actions/firestoreActions';
 
 class GameSummary extends Component {
 
     switchToStart = () => {
+        this.homeReset();
+        this.props.addScore('testName', this.props.average, 'testPC');
+        this.props.resetResults();
+    }
+
+    homeReset = () => {
         let start = document.querySelector('.start');
         start.style.opacity = '1';
+
+        let header = document.querySelector('.header');
+        header.style.opacity = 1;
+
         let gameSummary = document.querySelector('.game-summary');
         gameSummary.style.opacity = '0';
         gameSummary.style.pointerEvents = 'none';
+
         let game = document.querySelector('.game');
         game.style.pointerEvents = 'all';
-        this.props.resetResults();
     }
 
     render() {
@@ -34,7 +45,8 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
     return {
-        resetResults: () => dispatch(resetResults())
+        resetResults: () => dispatch(resetResults()),
+        addScore: (name, time, device) => dispatch(addScore(name, time, device))
     }
 }
 

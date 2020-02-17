@@ -1,20 +1,31 @@
 .Settings main {
     grid-column: 2/12;
-        ul li {
+    ul {
+        height: 40vh;
         display: flex;
-        justify-content: space-between;
-        .setup {
+        flex-direction: column;
+        justify-content: space-around;
+        li {
             display: flex;
+            flex-direction: column;
             align-items: center;
-            .bar {
-                position: relative;
-                width: 35px;
-                height: 10px;
-                border-radius: 1em;
-                background: var(--symbol);
-            }
-            .bar:nth-child(even) {
-                margin: 0 10px;
+            .setup {
+                display: flex;
+                align-items: center;
+                .bar {
+                    position: relative;
+                    width: 35px;
+                    height: 10px;
+                    border-radius: 1em;
+                    background: var(--symbol);
+                }
+                .bar:nth-child(even) {
+                    margin: 0 10px;
+                }
+                .fas {
+                    cursor: pointer;
+                    font-size: 1.4em;
+                }
             }
         }
     }

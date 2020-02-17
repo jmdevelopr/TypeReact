@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Component } from 'react';
 import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
 
 import './App.css';
@@ -16,29 +16,33 @@ import Leaderboard from './js/Leaderboard.js';
 import About from './js/About.js';
 import Menu from './js/Menu.js';
 
-function App() {
-  return (
-    <Router>
-      <div className="App">
-        <Nav />
-        <Switch >
-          <Route exact path="/">
-            <Home />
-          </Route>
-          <Route path="/settings">
-            <Settings />
-          </Route>
-          <Route path="/leaderboard">
-            <Leaderboard />
-          </Route>
-          <Route path="/about">
-            <About />
-          </Route>
-        </Switch>
-        <Menu />
-      </div>
-    </Router>
-  );
+class App extends Component{
+  render() {
+    
+    
+    return (
+      <Router>
+        <div className="App">
+          <Nav />
+          <Switch >
+            <Route exact path="/">
+              <Home />
+            </Route>
+            <Route path="/settings">
+              <Settings />
+            </Route>
+            <Route path="/leaderboard">
+              <Leaderboard />
+            </Route>
+            <Route path="/about">
+              <About />
+            </Route>
+          </Switch>
+          <Menu />
+        </div>
+      </Router>
+    );
+  }
 }
 
 export default App;

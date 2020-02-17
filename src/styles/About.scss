@@ -1,19 +1,12 @@
  .About {
-    header {
-        align-self: flex-end;
-        a {
-            color: var(--primary);
-            text-decoration: none;
-            font-family: 'Sarabun', sans-serif;
-            transition: .5s ease-in-out;
-        }
-    }
     main {
         grid-row: 2/5;
         grid-column: 3/11;
         height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
         .social {
-            margin: 160px 0;
             width: 100%;
             .icons {
                 width: 80%;
@@ -49,6 +42,13 @@
                 img {
                     width: 45px;
                 }
+            }
+        }
+        .subheader {
+            a {
+                color: var(--primary);
+                text-decoration: none;
+                font-family: 'Sarabun', sans-serif;
             }
         }
     }

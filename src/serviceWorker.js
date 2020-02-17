@@ -31,6 +31,10 @@ export function register(config) {
       return;
     }
 
+    window.addEventListener('fetch', function(event) {
+      event.respondWith(caches.match(event.request));
+    });
+
     window.addEventListener('load', () => {
       const swUrl = `${process.env.PUBLIC_URL}/service-worker.js`;
 

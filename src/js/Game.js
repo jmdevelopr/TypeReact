@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import {addResult, setFinalAverage} from '../store/actions/gameActions';
+import MobileDetect from 'mobile-detect';
 
 class Game extends Component {
     letter = "";
@@ -9,6 +10,8 @@ class Game extends Component {
     ms = 0;
     s = 0;
     timer;
+
+    md = new MobileDetect(window.navigator.userAgent);
 
     //BUG! the redux store is delayed by one result
     //temporary solution to the bug:
@@ -38,6 +41,8 @@ class Game extends Component {
 
             let menu = document.querySelector('.Menu');
             menu.style.pointerEvents = 'none';
+            if (this.md.mobile())
+                menu.style.opacity = '0';
 
             this.letter = this.gameStart();
 
@@ -101,6 +106,7 @@ class Game extends Component {
 
         let menu = document.querySelector('.Menu');
         menu.style.pointerEvents = 'all';
+        menu.style.opacity = '1';
         
         this.props.setFinalAverage(this.timeAverage());
     }

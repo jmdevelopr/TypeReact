@@ -2,6 +2,8 @@ import React, {Component} from 'react';
 import { connect } from 'react-redux';
 import { firestoreConnect } from 'react-redux-firebase';
 import { compose } from 'redux';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faMobileAlt, faLaptop } from '@fortawesome/free-solid-svg-icons';
 
 class Scores extends Component {
 
@@ -16,8 +18,23 @@ class Scores extends Component {
       return 0;
     }
 
-    render() {
+    mobileFilter(a) {
+        if (a.device === "mobile")
+            return a;
+    }
 
+    renderScores = () => {
+        this.props.scores.sort(this.compare).map((score, key) => (
+            <tr key={key}>
+                <th>{key+1}</th>
+                <th>{score.name}</th>
+                <th>{score.time} s</th>
+                <th>{ score.device==='Mobile' ? <FontAwesomeIcon icon={faMobileAlt} /> : <FontAwesomeIcon icon={faLaptop} /> }</th>                  
+            </tr>
+        ))
+    }
+
+    render() {
     return this.props.scores === undefined
         ?
         <div className="scores">
@@ -33,14 +50,34 @@ class Scores extends Component {
         <div className="scores">
             <table cellSpacing="0" cellPadding="1" width="300">
                 <tbody>
-                {this.props.scores.sort(this.compare).map((score, key) => (
-                    <tr key={key}>
-                        <th>{key+1}</th>
-                        <th>{score.name}</th>
-                        <th>{score.time} s</th>
-                        <th>{score.device}</th>                  
-                    </tr>
-                ))}
+                {this.props.device === 'Any' ? 
+                    this.props.scores.sort(this.compare).map((score, key) => (
+                        <tr key={key}>
+                            <th>{key+1}</th>
+                            <th>{score.name}</th>
+                            <th>{score.time} s</th>
+                            <th>{ score.device==='Mobile' ? <FontAwesomeIcon icon={faMobileAlt} /> : <FontAwesomeIcon icon={faLaptop} /> }</th>                  
+                        </tr>
+                    ))
+                    : 
+                    this.props.device === 'PC' ? 
+                    this.props.scores.sort(this.compare).filter(score => score.device === 'PC').map((score, key) => (
+                        <tr key={key}>
+                            <th>{key+1}</th>
+                            <th>{score.name}</th>
+                            <th>{score.time} s</th>
+                            <th>{ score.device==='Mobile' ? <FontAwesomeIcon icon={faMobileAlt} /> : <FontAwesomeIcon icon={faLaptop} /> }</th>                  
+                        </tr>
+                    )) 
+                    :
+                    this.props.scores.sort(this.compare).filter(score => score.device === 'Mobile').map((score, key) => (
+                        <tr key={key}>
+                            <th>{key+1}</th>
+                            <th>{score.name}</th>
+                            <th>{score.time} s</th>
+                            <th>{ score.device==='Mobile' ? <FontAwesomeIcon icon={faMobileAlt} /> : <FontAwesomeIcon icon={faLaptop} /> }</th>                  
+                        </tr>
+                    ))}
                 </tbody>
             </table>
         </div>

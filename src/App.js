@@ -16,10 +16,22 @@ import Leaderboard from './js/Leaderboard.js';
 import About from './js/About.js';
 import Menu from './js/Menu.js';
 
-class App extends Component{
+class App extends Component {
+
+  //fallback for mobile web browser bar
+
+  setHeight = () => {
+    let vh = window.innerHeight * 0.01;
+    document.documentElement.style.setProperty('--vh', `${vh}px`);
+  }
+
+  componentDidMount() {
+    this.setHeight();
+    window.addEventListener('resize', () => { this.setHeight(); });
+  }
+
   render() {
-    
-    
+
     return (
       <Router>
         <div className="App">
@@ -36,6 +48,10 @@ class App extends Component{
             </Route>
             <Route path="/about">
               <About />
+            </Route>
+            {/* fallback for pwa */}
+            <Route path="/">
+              <Home />
             </Route>
           </Switch>
           <Menu />

@@ -2,12 +2,15 @@ import React, {Component} from 'react';
 import { connect } from 'react-redux';
 import { resetResults } from '../store/actions/gameActions';
 import { addScore } from '../store/actions/firestoreActions';
+import MobileDetect from 'mobile-detect';
 
 class GameSummary extends Component {
 
+    md = new MobileDetect(window.navigator.userAgent);
+
     switchToStart = () => {
         this.homeReset();
-        this.props.addScore('testName', this.props.average, 'testPC');
+        this.props.addScore('testName', this.props.average, this.md.mobile() ? 'Mobile' : 'PC');
         this.props.resetResults();
     }
 

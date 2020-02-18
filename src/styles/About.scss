@@ -9,8 +9,8 @@
         .social {
             width: 100%;
             .icons {
-                width: 80%;
-                margin: 25px auto;
+                width: 50vw;
+                margin: 10px auto;
                 display: flex;
                 align-items: center;
                 justify-content: space-between;
@@ -23,6 +23,7 @@
         .project {
             display: grid;
             grid-template-rows: repeat(2, 1fr);
+            margin: calc(var(--vh, 1vh) * 6) auto;
             button {
                 background: #364F6B;
                 color: var(--primary);

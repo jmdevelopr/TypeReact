@@ -3,6 +3,25 @@ import { connect } from 'react-redux';
 import Scores from './Scores';
 
 class Leaderboard extends Component {
+
+    state = {
+        scoresType: 'Any'
+    }
+
+    //this stuff obviously to optimalize
+
+    setScoresTypeAny = () => {
+        this.setState(state => { return {scoresType: 'Any'} });
+    }
+
+    setScoresTypePC = () => {
+        this.setState(state => { return {scoresType: 'PC'} });
+    }
+
+    setScoresTypeMobile = () => {
+        this.setState(state => { return {scoresType: 'Mobile'} });
+    }
+
     render() {
         return (
             <section className="Leaderboard grid">
@@ -12,11 +31,11 @@ class Leaderboard extends Component {
                 </header>
                 <main>
                     <div className="buttons">
-                        <button id="all-btn">All</button>
-                        <button id="pc-btn">PC</button>
-                        <button id="mobile-btn">Mobile</button>
+                        <button id="all-btn" onClick={this.setScoresTypeAny}>All</button>
+                        <button id="pc-btn" onClick={this.setScoresTypePC}>PC</button>
+                        <button id="mobile-btn" onClick={this.setScoresTypeMobile}>Mobile</button>
                     </div>
-                    <Scores />
+                    <Scores device={this.state.scoresType} />
                 </main>
             </section> 
         )

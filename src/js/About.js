@@ -11,7 +11,7 @@ class About extends Component {
                     <h1>About</h1>
                     <p>TypeReact created by Jakub Makuch.</p>
                 </header>
-                <main className="links">
+                <main>
                     <div className="social">
                         <h1>My social media</h1>
                         <div className="icons">

@@ -48,8 +48,8 @@ class Settings extends Component {
                             <div className="setup">
                                 <FontAwesomeIcon icon={faMinus} className="fas" onClick={this.decreaseLetters}/>
                                 <div className="bar"></div>
-                                <div className="bar"></div>
-                                <div className="bar"></div>
+                                <div className="bar" style={{opacity: this.props.letters >= 10 ? '1' : '.5'}}></div>
+                                <div className="bar" style={{opacity: this.props.letters === 15 ? '1' : '.5'}}></div>
                                 <FontAwesomeIcon icon={faPlus} className="fas" onClick={this.increaseLetters}/>
                             </div>
                         </li>
@@ -58,8 +58,8 @@ class Settings extends Component {
                             <div className="setup">
                                 <FontAwesomeIcon icon={faMinus} className="fas" onClick={this.decreaseSpeed}/>
                                 <div className="bar"></div>
-                                <div className="bar"></div>
-                                <div className="bar"></div>
+                                <div className="bar" style={{opacity: this.props.speed <= 1000 ? '1' : '.5'}}></div>
+                                <div className="bar" style={{opacity: this.props.speed === 500 ? '1' : '.5'}}></div>
                                 <FontAwesomeIcon icon={faPlus} className="fas" onClick={this.increaseSpeed}/>
                             </div>
                         </li>

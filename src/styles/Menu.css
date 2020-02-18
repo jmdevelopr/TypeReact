@@ -1,6 +1,6 @@
 .Menu {
   border-top: 1px solid rgba(78, 119, 160, 0.4);
-  height: calc(100vh - 82vh - 70px); }
+  height: calc(100% - 82% - 70px); }
   .Menu ul {
     display: -webkit-box;
     display: -ms-flexbox;

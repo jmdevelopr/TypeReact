@@ -6,7 +6,7 @@
     align-items: center;
     flex-direction: column;
     .buttons {
-        width: 80%;
+        width: 45vw;
         margin: 0 auto;
         display: flex;
         justify-content: space-between;
@@ -23,7 +23,7 @@
     }
     .scores {
         width: 70vw; 
-        height: 50vh; 
+        height: calc(var(--vh, 1vh) * 50); 
         overflow: auto;
         margin: 30px 0;
         background: #364F6B;
@@ -35,6 +35,10 @@
             tr {
                 height: 50px;
                 text-align: left;
+                th + :last-child {
+                    font-size: 1.3em;
+                    color: var(--symbol);
+                }
             }
         }
     }
@@ -52,8 +56,13 @@
 }
 
 @media screen and (max-width: 425px) {
-    .Leaderboard main .scores {
-        width: 85vw; 
-        font-size: .9em;
+    .Leaderboard main {
+        .buttons {
+            width: 58vw;
+        }
+        .scores {
+            width: 85vw; 
+            font-size: .9em;
+        }
     }
 }

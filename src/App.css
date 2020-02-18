@@ -11,6 +11,7 @@ html, * {
   --secondary: #768390;
   --interface: #364F6B;
   --symbol: #7AD9F5;
+  --vh: 0px;
 }
 
 /* fonts */
@@ -22,7 +23,7 @@ html, * {
 /* basic styles */
 
 .App {
-  height: 100vh;
+  height: calc(var(--vh, 1vh) * 100);
   background: #243548;
   font-size: 16px;
 }

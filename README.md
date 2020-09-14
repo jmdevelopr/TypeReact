@@ -9,7 +9,7 @@ Link to a deployed version: https://type-react.web.app/
 3. Start the web server using the `npm start` command and go to http://localhost:3000/ on your browser
 
 ## Features
-- Gameplay
+- *Gameplay*
   - the interface is locked while playing a game
   - on mobile keyboard pops up automatically
   
